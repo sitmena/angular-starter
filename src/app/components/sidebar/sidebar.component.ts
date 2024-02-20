@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {RouterLink} from "@angular/router";
+import {Component} from '@angular/core';
+import {Router, RouterLink} from "@angular/router";
 import {Pages} from "../../enums/pages";
 
 @Component({
@@ -13,5 +13,12 @@ import {Pages} from "../../enums/pages";
 })
 export class SidebarComponent {
 
-    protected readonly Pages = Pages;
+  protected readonly Pages = Pages;
+  constructor(private _router: Router) {
+  }
+
+  logout() {
+    localStorage.setItem("isLoggedIn", "false")
+    this._router.navigate(['/login'])
+  }
 }

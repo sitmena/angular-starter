@@ -1,6 +1,8 @@
 <div>
-  <app-sidebar/>
-  <div class="ml-64">
+  @if (_permissionService.isLoggedIn()) {
+    <app-sidebar/>
+  }
+  <div [ngClass]="{'ml-64': _permissionService.isLoggedIn()}">
     <router-outlet/>
   </div>
 </div>

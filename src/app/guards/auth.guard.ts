@@ -4,10 +4,12 @@ import {inject, Injectable} from "@angular/core";
 @Injectable()
 export class PermissionsService {
 
-  isLoggedIn: boolean = localStorage.getItem("isLoggedIn") === 'true'
+  isLoggedIn(): boolean {
+    return localStorage.getItem("isLoggedIn") === 'true'
+  }
 
   canActivate(): boolean | UrlTree {
-    if (localStorage.getItem("isLoggedIn") === 'true') {
+    if (this.isLoggedIn()) {
       return true;
     }
 
