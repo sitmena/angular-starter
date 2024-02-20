@@ -1,0 +1,26 @@
+<!-- sidebar.component.html -->
+<aside class="bg-gray-800 w-64 h-screen fixed top-0 left-0 overflow-y-auto transition-all duration-300">
+  <div class="flex items-center justify-center h-16 border-b border-gray-700">
+    <h1 class="text-white text-xl font-semibold">Sidebar</h1>
+  </div>
+  <ul class="mt-6">
+    <li class="px-6 py-3 text-gray-400 hover:bg-gray-700 hover:text-white">
+      <a routerLink="/" class="flex items-center">
+        <i class="fas fa-home mr-3"></i>
+        Dashboard
+      </a>
+    </li>
+    <li class="px-6 py-3 text-gray-400 hover:bg-gray-700 hover:text-white">
+      <a [routerLink]="Pages.PROFILE" class="flex items-center">
+        <i class="fas fa-user mr-3"></i>
+        Profile
+      </a>
+    </li>
+    <li class="px-6 py-3 text-gray-400 hover:bg-gray-700 hover:text-white">
+      <a [routerLink]="Pages.LOGIN" class="flex items-center">
+        <i class="fas fa-cog mr-3"></i>
+        Logout
+      </a>
+    </li>
+  </ul>
+</aside>
